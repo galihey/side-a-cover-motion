@@ -18,8 +18,8 @@
   gctx.putImageData(pixels,0,0);
   const hero = $('.hero-art'), heroPause = $('.hero-pause');
   if(paused) hero.classList.add('paused');
-  function syncPause(){pauseButton.textContent=paused?'▶':'Ⅱ';pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Включить предпросмотр':'Приостановить предпросмотр');}
-  function syncHero(){const p=hero.classList.contains('paused');heroPause.textContent=p?'▶':'Ⅱ';heroPause.setAttribute('aria-pressed',String(p));heroPause.setAttribute('aria-label',p?'Включить анимацию примера':'Приостановить анимацию примера');}
+  function syncPause(){pauseButton.innerHTML=paused?'<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 3 17 10 5 17Z"/></svg>':'<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 3h4v14H4ZM12 3h4v14h-4Z"/></svg>';pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Включить предпросмотр':'Приостановить предпросмотр');}
+  function syncHero(){const p=hero.classList.contains('paused');heroPause.innerHTML=p?'<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M5 3 17 10 5 17Z"/></svg>':'<svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 3h4v14H4ZM12 3h4v14h-4Z"/></svg>';heroPause.setAttribute('aria-pressed',String(p));heroPause.setAttribute('aria-label',p?'Включить анимацию примера':'Приостановить анимацию примера');}
   syncPause();syncHero();
   heroPause.addEventListener('click',()=>{hero.classList.toggle('paused');syncHero();});
   pauseButton.addEventListener('click',()=>{if(recording)return;paused=!paused;syncPause();});
