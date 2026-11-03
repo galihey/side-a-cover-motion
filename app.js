@@ -18,8 +18,9 @@
   gctx.putImageData(pixels,0,0);
   const hero = $('.hero-art'), heroPause = $('.hero-pause');
   if(paused) hero.classList.add('paused');
-  function syncPause(){pauseButton.textContent=paused?'▶':'Ⅱ';pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Включить предпросмотр':'Приостановить предпросмотр');}
-  function syncHero(){const p=hero.classList.contains('paused');heroPause.textContent=p?'▶':'Ⅱ';heroPause.setAttribute('aria-pressed',String(p));heroPause.setAttribute('aria-label',p?'Включить анимацию примера':'Приостановить анимацию примера');}
+  function playbackIcon(isPaused){return isPaused?'<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="m8 5 11 7-11 7z"/></svg>':'<svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor"><path d="M6 5h4v14H6zM14 5h4v14h-4z"/></svg>';}
+  function syncPause(){pauseButton.innerHTML=playbackIcon(paused);pauseButton.setAttribute('aria-pressed',String(paused));pauseButton.setAttribute('aria-label',paused?'Включить предпросмотр':'Приостановить предпросмотр');}
+  function syncHero(){const p=hero.classList.contains('paused');heroPause.innerHTML=playbackIcon(p);heroPause.setAttribute('aria-pressed',String(p));heroPause.setAttribute('aria-label',p?'Включить анимацию примера':'Приостановить анимацию примера');}
   syncPause();syncHero();
   heroPause.addEventListener('click',()=>{hero.classList.toggle('paused');syncHero();});
   pauseButton.addEventListener('click',()=>{if(recording)return;paused=!paused;syncPause();});
@@ -102,4 +103,3 @@
   window.addEventListener('pagehide',()=>{if(sourceUrl)URL.revokeObjectURL(sourceUrl);clearTimeout(exportTimer);exportStream?.getTracks().forEach(t=>t.stop());});
   loadDefault();requestAnimationFrame(loop);
 })();
-

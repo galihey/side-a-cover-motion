@@ -9,3 +9,16 @@
 @media(max-width:760px){.studio-intro,.mood-description,.steps p,.faq-list details p{font-size:12px}.honesty-note p{font-size:11px}.file-note,.export-note{font-size:10px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{animation:none!important;transition:none!important}}
 
+/* Vector symbols and complete mobile ribbon phrases */
+.asterisk{display:block;width:26px;height:26px;flex-shrink:0}
+.ribbon b{display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.honesty-note>.asterisk,.honesty-note>span{flex-shrink:0}
+.hero-pause,.preview-pause{display:grid;place-items:center;padding:0}
+.hero-pause svg,.preview-pause svg{display:block;width:14px;height:14px}
+@media(max-width:760px){
+  .ribbon>div{width:calc(100% - 40px);margin-inline:auto;display:grid;grid-template-columns:minmax(0,1fr) auto;gap:14px 20px;white-space:normal}
+  .ribbon span{line-height:1.5;overflow-wrap:normal}
+  .ribbon .asterisk{width:21px;height:21px}
+  .hero-copy{min-width:0}
+  .hero h1{font-size:clamp(46px,12vw,82px)}
+}
