@@ -114,9 +114,7 @@ html.motion-ready.scroll-story-active .scroll-flow.reveal .flow-arrow,html.motio
  #projects h3,.section-title{transform-origin:left bottom}
 }
 </style><style id="mobile-reference-intro">
-.intro-replay{display:none}
 @media (max-width:700px){
- .hero .intro-replay:not([hidden]){display:block;align-self:flex-start;min-height:44px;margin-top:10px;padding:0;border:0;background:none;color:inherit;font:inherit;font-size:.82rem;text-decoration:underline;text-underline-offset:.25em;cursor:pointer}
  html[data-hero-intro] .hero h1,html[data-hero-intro] .hero .intro,html[data-hero-intro] .hero .eyebrow,html[data-hero-intro] .hero .resume-contact,html[data-hero-intro] .hero .resume-contact>*{animation:none!important}
  html[data-hero-intro="waiting"] .hero h1,html[data-hero-intro="waiting"] .hero .intro,html[data-hero-intro="waiting"] .hero .eyebrow,html[data-hero-intro="waiting"] .hero .role,html[data-hero-intro="waiting"] .hero .resume-contact,html[data-hero-intro="waiting"] .topbar{opacity:0}
  html[data-hero-intro="running"] .hero h1{transform-origin:center center;animation:mobile-name-spring 1.8s both!important}
@@ -126,8 +124,6 @@ html.motion-ready.scroll-story-active .scroll-flow.reveal .flow-arrow,html.motio
  html[data-hero-intro="running"] .hero .resume-contact>*{animation:mobile-intro-fade 680ms cubic-bezier(.42,0,.3,1) 510ms both!important}
  html[data-hero-intro="running"] .hero .resume-contact>:nth-child(2){animation-delay:580ms!important}
  html[data-hero-intro="running"] .hero .resume-contact>:nth-child(3){animation-delay:650ms!important}
- html[data-hero-intro="waiting"] .intro-replay,html[data-hero-intro="running"] .intro-replay{visibility:hidden}
- html[data-hero-intro="done"] .intro-replay{animation:mobile-intro-fade 400ms ease-out both}
 }
 @keyframes mobile-name-spring{
  0%{opacity:0;transform:scaleY(.04);animation-timing-function:cubic-bezier(.35,.05,.31,1)}
@@ -140,11 +136,9 @@ html.motion-ready.scroll-story-active .scroll-flow.reveal .flow-arrow,html.motio
 @keyframes mobile-intro-fade{from{opacity:0}to{opacity:1}}
 @media(max-width:700px) and (prefers-reduced-motion:reduce){
  html[data-hero-intro="running"] .hero h1{animation-name:mobile-name-gentle!important;animation-timing-function:ease-out!important}
- html[data-hero-intro="running"][data-hero-replay] .hero h1{animation-name:mobile-name-spring!important}
  html[data-hero-intro="running"] .hero .role,html[data-hero-intro="running"] .hero .resume-contact>*{animation-name:mobile-intro-fade!important}
  html[data-hero-intro="running"] .intro-letter{animation-duration:160ms!important}
 }
-@media print{.intro-replay{display:none!important}}
 @media screen and (min-width:701px) and (prefers-reduced-motion:no-preference){
  .hero .eyebrow .intro-letter{animation:mobile-intro-fade 160ms ease-out var(--letter-delay) both}
 }
@@ -261,7 +255,7 @@ html.motion-ready.scroll-story-active .scroll-flow.reveal .flow-arrow,html.motio
 .tradingview-preview{display:block;margin:20px 0 16px;text-decoration:none}
 @media print{.tradingview-preview{display:none}}
 </style></head><body id="top"><a class="skip" href="#about">Перейти к резюме</a><header class="topbar wrap"><nav aria-label="Разделы страницы"><a href="#about">Обо мне</a><a href="#projects">Проекты</a><a href="#experience">Опыт</a><a href="#contacts">Контакты</a></nav></header><main class="wrap">
-<div class="hero"><p class="eyebrow">Резюме · Краснодар · удалённо</p><h1><span class="hero-title-motion"><span class="fitted-line"><span>АНАТОЛИЙ</span></span> <br><span class="fitted-line"><span>ГАЛИХАНОВ</span></span></span></h1><p class="intro"><span class="resume-scroll-word" aria-hidden="true">Резюме</span><span class="intro-specialty">AI-разработчик / VibeCoder</span></p><p class="role">Сайты, боты, лендинги, ИИ-ассистенты, интеграция и автоматизация</p><div class="resume-contact"><div class="contact-action"><button class="primary" id="contact-trigger" type="button" aria-expanded="false" aria-controls="contact-popover">Написать мне ↗</button><div class="contact-popover" id="contact-popover" hidden=""><div class="contact-email-row"><span id="contact-email">perepechka33@gmail.com</span><button id="copy-email" type="button" aria-label="Скопировать адрес почты" title="Скопировать адрес почты"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.8"></path></svg><span>Скопировать</span></button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div></div><a href="https://t.me/gali_hey" target="_blank" rel="noopener noreferrer">Telegram ↗</a><a href="Резюме.pdf" download="">Скачать PDF ↗</a></div><button type="button" class="intro-replay" hidden>Повторить заставку</button></div>
+<div class="hero"><p class="eyebrow">Резюме · Краснодар · удалённо</p><h1><span class="hero-title-motion"><span class="fitted-line"><span>АНАТОЛИЙ</span></span> <br><span class="fitted-line"><span>ГАЛИХАНОВ</span></span></span></h1><p class="intro"><span class="resume-scroll-word" aria-hidden="true">Резюме</span><span class="intro-specialty">AI-разработчик / VibeCoder</span></p><p class="role">Сайты, боты, лендинги, ИИ-ассистенты, интеграция и автоматизация</p><div class="resume-contact"><div class="contact-action"><button class="primary" id="contact-trigger" type="button" aria-expanded="false" aria-controls="contact-popover">Написать мне ↗</button><div class="contact-popover" id="contact-popover" hidden=""><div class="contact-email-row"><span id="contact-email">perepechka33@gmail.com</span><button id="copy-email" type="button" aria-label="Скопировать адрес почты" title="Скопировать адрес почты"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.8"></path></svg><span>Скопировать</span></button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div></div><a href="https://t.me/gali_hey" target="_blank" rel="noopener noreferrer">Telegram ↗</a><a href="Резюме.pdf" download="">Скачать PDF ↗</a></div></div>
 <section class="section" id="about"><span class="section-index">01 / ОБО МНЕ</span><h2 class="section-title scroll-flow"><span class="flow-part">Идея</span> <span class="flow-part flow-arrow">→</span> <span class="flow-part">прототип</span> <span class="flow-part flow-arrow">→</span> <span class="flow-part">работающий продукт</span></h2><div class="reading"><p>AI-разработчик / VibeCoder. Занимаюсь проектной разработкой с помощью ИИ с 2022 года. Создал коммерческого Telegram-бота с ChatGPT, подписками и оплатой. Разрабатывал MVP видеобота, стратегию TradingView и серверные инструменты VPN. Сделал локального ИИ-помощника по портфолио.</p><p>Vibe coding применяю как управляемый цикл: декомпозиция → генерация → проверка → доработка. Использую Codex, ChatGPT, Claude Code и Cursor. Проверяю пользовательские сценарии и логи, сохраняю версии в Git. Мои сильные стороны — продуктовое мышление, сценарная декомпозиция, визуальный вкус и внимание к удобству пользователя.</p><p>Ищу удалённую работу: агенты и ассистенты, боты, интеграции, приложения, сайты и автоматизация процессов. Код создаю и дорабатываю с помощью ИИ.</p></div></section>
 <section class="section" id="projects"><span class="section-index">02 / ПРОЕКТЫ</span><h2 class="section-title"><span class="fitted-line"><span>Что я сделал</span></span></h2><p class="reading">Проекты ниже взяты из моего резюме. Для отключённых и приостановленных сервисов указан их текущий статус.</p><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Коммерческий</span></span> <span class="fitted-line"><span>бот с ChatGPT</span></span></h3><p class="rank">2023 · около 60 оплат за время работы</p></div><div class="app-body"><p>Запустил Telegram-бота с выбором моделей, подписками, лимитами и оплатой через ЮKassa. Проверял путь «тариф → оплата → доступ». Ботом пользовались реальные люди. Сейчас бот отключён.</p><p>Стек: Python, OpenAI API и SQLite. Развернул сервис на PythonAnywhere. Переход на aiohttp устранил блокировку запросов других пользователей.</p><p class="project-tools">Telegram · Python · OpenAI API · SQLite · ЮKassa · aiohttp</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>ИИ-помощник</span></span> <span class="fitted-line"><span>по портфолио</span></span></h3><a class="rag-preview" href="https://rag-portfolio-galihey.gali-hey.chatgpt.site" target="_blank" rel="noopener noreferrer" aria-label="Открыть ИИ-помощника по портфолио"><div class="project-stage" aria-hidden="true">
  <div class="project-screen">
@@ -426,7 +420,6 @@ document.addEventListener('click',event=>{if(!event.target.closest('.contact-act
 (function(){
  const mobile=matchMedia('(max-width:700px)');
  const root=document.documentElement;
- const replay=document.querySelector('.intro-replay');
  const specialty=document.querySelector('.intro-specialty');
  function animateLetters(element,startDelay){
   const text=element.textContent;
@@ -447,35 +440,27 @@ document.addEventListener('click',event=>{if(!event.target.closest('.contact-act
  const eyebrow=document.querySelector('.hero .eyebrow');
  if(eyebrow)animateLetters(eyebrow,220);
  root.removeAttribute('data-signature-pending');
- if(!mobile.matches||!replay||!specialty)return;
+ if(!mobile.matches||!specialty)return;
  animateLetters(specialty,340);
- replay.hidden=false;
  let startTimer,finishTimer;
- let replaying=false;
  function finish(){clearTimeout(startTimer);clearTimeout(finishTimer);root.dataset.heroIntro='done'}
  function start(){
   if(document.hidden||root.dataset.heroIntro!=='waiting')return;
   clearTimeout(startTimer);
   startTimer=setTimeout(function(){
    if(document.hidden||root.dataset.heroIntro!=='waiting')return;
-   if(!replaying&&window.pageYOffset>80){finish();return}
+   if(window.pageYOffset>80){finish();return}
    root.dataset.heroIntro='running';
    finishTimer=setTimeout(finish,1900);
   },380);
  }
  function prepare(){root.dataset.heroIntro='waiting';start()}
- replay.addEventListener('click',function(){
-  replaying=true;
-  root.setAttribute('data-hero-replay','');
-  window.scrollTo({top:0,behavior:'instant'});
-  prepare();
- });
  document.addEventListener('focusin',event=>{
-  if(!event.target.matches('.intro-replay')&&event.target.closest('.hero, .topbar')&&root.dataset.heroIntro!=='done')finish();
+  if(event.target.closest('.hero, .topbar')&&root.dataset.heroIntro!=='done')finish();
  });
  window.addEventListener('pageshow',start);
  document.addEventListener('visibilitychange',start);
- window.addEventListener('scroll',function(){if(!replaying&&window.pageYOffset>80&&root.dataset.heroIntro==='waiting')finish()},{passive:true});
+ window.addEventListener('scroll',function(){if(window.pageYOffset>80&&root.dataset.heroIntro==='waiting')finish()},{passive:true});
  if(!location.hash&&window.pageYOffset<80)prepare();else finish();
 })();
 </script><script id="mobile-heading-fit">
