@@ -254,16 +254,61 @@ html.motion-ready.scroll-story-active .scroll-flow.reveal .flow-arrow,html.motio
 </style><style id="tradingview-preview-style">
 .tradingview-preview{display:block;margin:20px 0 16px;text-decoration:none}
 @media print{.tradingview-preview{display:none}}
+</style><style id="project-benefit-style">
+.project-benefit{max-width:40ch;margin:14px 0 0}
+.project-benefit summary{
+ display:inline-flex;align-items:center;gap:14px;min-height:44px;max-width:100%;padding:7px 12px 7px 16px;
+ border:1px solid #efaa91a8;border-radius:30px;color:#f5e2d2;font-size:.88rem;font-weight:650;
+ list-style:none;cursor:pointer;transition:background-color .2s ease,border-color .2s ease;
+}
+.project-benefit summary::-webkit-details-marker{display:none}
+.project-benefit summary::marker{content:""}
+.project-benefit summary:focus-visible{outline:2px solid #f3c2ac;outline-offset:4px}
+.project-benefit[open] summary{background:#f3c2ac17;border-color:#efaa91}
+@media(hover:hover){.project-benefit summary:hover{background:#f3c2ac22;border-color:#efaa91}}
+.project-benefit-icon{position:relative;flex:0 0 22px;width:22px;height:22px;border:1px solid #efaa91;border-radius:50%;color:#efaa91}
+.project-benefit-icon::before,.project-benefit-icon::after{content:"";position:absolute;left:50%;top:50%;width:9px;height:1px;background:currentColor;transform:translate(-50%,-50%)}
+.project-benefit-icon::after{transform:translate(-50%,-50%) rotate(90deg)}
+.project-benefit[open] .project-benefit-icon::after{display:none}
+.project-benefit p{margin:11px 0 0;padding:3px 0 3px 13px;border-left:2px solid #efaa91;color:#f3e1d1;font-size:.95rem;line-height:1.55}
+@media print{.project-benefit{display:none}}
+
+.project-benefit summary::after{content:none}
+.project-benefit.is-awaiting{opacity:0;pointer-events:none}
+.project-benefit.is-awaiting:focus-within{opacity:1;pointer-events:auto}
+.project-benefit.is-revealed{animation:benefit-appear .85s ease-out both}
+@keyframes benefit-appear{from{opacity:0}to{opacity:1}}
+@media screen and (max-width:700px){
+ .app-body .project-benefit{margin:20px 0 20px}
+ .project-benefit.is-revealed{animation-duration:.6s}
+}
+@media(prefers-reduced-motion:reduce){.project-benefit.is-revealed{animation-duration:.45s!important}}
+@media screen and (min-width:701px){
+ #projects .project .app-body{
+  align-self:start;
+  /* Align the letter tops across the display and body fonts. */
+  padding-block-start:clamp(2px,calc(1.33vw - 7.3px),14px);
+ }
+}
 </style></head><body id="top"><a class="skip" href="#about">Перейти к резюме</a><header class="topbar wrap"><nav aria-label="Разделы страницы"><a href="#about">Обо мне</a><a href="#projects">Проекты</a><a href="#experience">Опыт</a><a href="#contacts">Контакты</a></nav></header><main class="wrap">
 <div class="hero"><p class="eyebrow">Резюме · Краснодар · удалённо</p><h1><span class="hero-title-motion"><span class="fitted-line"><span>АНАТОЛИЙ</span></span> <br><span class="fitted-line"><span>ГАЛИХАНОВ</span></span></span></h1><p class="intro"><span class="resume-scroll-word" aria-hidden="true">Резюме</span><span class="intro-specialty">AI-разработчик / VibeCoder</span></p><p class="role">Сайты, боты, лендинги, ИИ-ассистенты, интеграция и автоматизация</p><div class="resume-contact"><div class="contact-action"><button class="primary" id="contact-trigger" type="button" aria-expanded="false" aria-controls="contact-popover">Написать мне ↗</button><div class="contact-popover" id="contact-popover" hidden=""><div class="contact-email-row"><span id="contact-email">perepechka33@gmail.com</span><button id="copy-email" type="button" aria-label="Скопировать адрес почты" title="Скопировать адрес почты"><svg viewbox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2" stroke="currentColor" stroke-width="1.8"></rect><path d="M16 8V6a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2" stroke="currentColor" stroke-width="1.8"></path></svg><span>Скопировать</span></button></div><p class="copy-status" id="copy-status" role="status" aria-live="polite"></p></div></div><a href="https://t.me/gali_hey" target="_blank" rel="noopener noreferrer">Telegram ↗</a><a href="Резюме.pdf" download="">Скачать PDF ↗</a></div></div>
 <section class="section" id="about"><span class="section-index">01 / ОБО МНЕ</span><h2 class="section-title scroll-flow"><span class="flow-part">Идея</span> <span class="flow-part flow-arrow">→</span> <span class="flow-part">прототип</span> <span class="flow-part flow-arrow">→</span> <span class="flow-part">работающий продукт</span></h2><div class="reading"><p>AI-разработчик / VibeCoder. Занимаюсь проектной разработкой с помощью ИИ с 2022 года. Создал коммерческого Telegram-бота с ChatGPT, подписками и оплатой. Разрабатывал MVP видеобота, стратегию TradingView и серверные инструменты VPN. Сделал локального ИИ-помощника по портфолио.</p><p>Vibe coding применяю как управляемый цикл: декомпозиция → генерация → проверка → доработка. Использую Codex, ChatGPT, Claude Code и Cursor. Проверяю пользовательские сценарии и логи, сохраняю версии в Git. Мои сильные стороны — продуктовое мышление, сценарная декомпозиция, визуальный вкус и внимание к удобству пользователя.</p><p>Ищу удалённую работу: агенты и ассистенты, боты, интеграции, приложения, сайты и автоматизация процессов. Код создаю и дорабатываю с помощью ИИ.</p></div></section>
-<section class="section" id="projects"><span class="section-index">02 / ПРОЕКТЫ</span><h2 class="section-title"><span class="fitted-line"><span>Что я сделал</span></span></h2><p class="reading">Проекты ниже взяты из моего резюме. Для отключённых и приостановленных сервисов указан их текущий статус.</p><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Коммерческий</span></span> <span class="fitted-line"><span>бот с ChatGPT</span></span></h3><p class="rank">2023 · около 60 оплат за время работы</p></div><div class="app-body"><p>Запустил Telegram-бота с выбором моделей, подписками, лимитами и оплатой через ЮKassa. Проверял путь «тариф → оплата → доступ». Ботом пользовались реальные люди. Сейчас бот отключён.</p><p>Стек: Python, OpenAI API и SQLite. Развернул сервис на PythonAnywhere. Переход на aiohttp устранил блокировку запросов других пользователей.</p><p class="project-tools">Telegram · Python · OpenAI API · SQLite · ЮKassa · aiohttp</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>ИИ-помощник</span></span> <span class="fitted-line"><span>по портфолио</span></span></h3><a class="rag-preview" href="https://rag-portfolio-galihey.gali-hey.chatgpt.site" target="_blank" rel="noopener noreferrer" aria-label="Открыть ИИ-помощника по портфолио"><div class="project-stage" aria-hidden="true">
+<section class="section" id="projects"><span class="section-index">02 / ПРОЕКТЫ</span><h2 class="section-title"><span class="fitted-line"><span>Что я сделал</span></span></h2><p class="reading">Проекты ниже взяты из моего резюме. Для отключённых и приостановленных сервисов указан их текущий статус.</p><article class="app project" id="rag-project"><div class="app-heading"><h3><span class="fitted-line"><span>ИИ-помощник</span></span> <span class="fitted-line"><span>на сайте</span></span></h3><a class="rag-preview" href="https://rag-portfolio-galihey.gali-hey.chatgpt.site" target="_blank" rel="noopener noreferrer" aria-label="Открыть демо ИИ-помощника"><div class="project-stage" aria-hidden="true">
  <div class="project-screen">
   <img class="project-poster" src="assets/rag-motion.jpg" alt="" loading="lazy" decoding="async">
   <video class="project-motion" data-src="assets/rag-smooth.mp4" muted playsinline preload="none" tabindex="-1" disablepictureinpicture loop></video>
   <div class="project-frames" data-src="assets/rag-smooth.webp"><i></i><i></i></div>
  </div>
-</div><span class="rag-preview-label">Посмотреть ИИ-помощника <span aria-hidden="true">↗</span><small>Открыть демо</small></span></a><p class="rank">Демо · 6 проектов</p></div><div class="app-body"><p>С помощью ИИ сделал локального помощника с RAG-подходом: сначала он находит нужные фрагменты в описаниях моих проектов, затем отвечает на вопрос и показывает цитаты. Добавил сравнение опыта с требованиями вакансии. Весь корпус в каждый запрос не передаётся.</p><p>Для поиска использовал BM25 и embeddings, для ответов — gpt-4.1-mini через OpenAI API. Сервер на FastAPI проверяет точное совпадение цитат с найденными фрагментами. Приватные документы не индексируются.</p><p class="project-tools">Python · FastAPI · OpenAI API · BM25 · embeddings · SQLite · HTML/CSS/JavaScript</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Видеобот <span style="letter-spacing: -0.8px;">MVP</span></span></span></h3><p class="rank">Прототип · несколько десятков роликов</p></div><div class="app-body"><p>Разработал MVP «текст → видео»: сценарий, сцены, изображения, озвучка и монтаж. На реальных текстах собрал несколько десятков роликов.</p><p>Проверял персонажа и звук. Тайминг этапов и общее время выводились в Telegram, ошибки — в лог. Исправил подмену нового референса старым. Для проверки гипотезы использовал бесплатные или недорогие модели. Для видеогенерации подготовил заглушку.</p><p class="project-tools">Python · OpenAI API · Yandex SpeechKit · FFmpeg</p></div></article><article class="app project" id="tradingview"><div class="app-heading"><h3><span class="fitted-line"><span>ICT-стратегия</span></span> <span class="fitted-line"><span>для TradingView</span></span></h3><a class="tradingview-preview" href="https://www.tradingview.com/chart/?symbol=BINANCE%3ABTCUSDT&amp;interval=15&amp;theme=dark" target="_blank" rel="noopener noreferrer" aria-label="Открыть график BTC/USDT на TradingView, 15 минут">
+</div><span class="rag-preview-label">Посмотреть ИИ-помощника <span aria-hidden="true">↗</span><small>Открыть демо</small></span></a><p class="rank">Демо · 6 проектов</p><details class="project-benefit">
+ <summary>Как вам это поможет?<span class="project-benefit-icon" aria-hidden="true"></span></summary>
+ <p>Посетитель задаёт вопрос, а ИИ находит ответ по материалам вашего сайта.</p>
+</details></div><div class="app-body"><p>С помощью ИИ сделал локального помощника с RAG-подходом: сначала он находит нужные фрагменты в описаниях моих проектов, затем отвечает на вопрос и показывает цитаты. Добавил сравнение опыта с требованиями вакансии. Весь корпус в каждый запрос не передаётся.</p><p>Для поиска использовал BM25 и embeddings, для ответов — gpt-4.1-mini через OpenAI API. Сервер на FastAPI проверяет точное совпадение цитат с найденными фрагментами. Приватные документы не индексируются.</p><p class="project-tools">Python · FastAPI · OpenAI API · BM25 · embeddings · SQLite · HTML/CSS/JavaScript</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Коммерческий</span></span> <span class="fitted-line"><span>бот с ChatGPT</span></span></h3><p class="rank">2023 · около 60 оплат за время работы</p><details class="project-benefit">
+ <summary>Как вам это поможет?<span class="project-benefit-icon" aria-hidden="true"></span></summary>
+ <p>Пользуйтесь ИИ прямо в Telegram. Можно выбрать тариф и оплатить его.</p>
+</details></div><div class="app-body"><p>Запустил Telegram-бота с выбором моделей, подписками, лимитами и оплатой через ЮKassa. Проверял путь «тариф → оплата → доступ». Ботом пользовались реальные люди. Сейчас бот отключён.</p><p>Стек: Python, OpenAI API и SQLite. Развернул сервис на PythonAnywhere. Переход на aiohttp устранил блокировку запросов других пользователей.</p><p class="project-tools">Telegram · Python · OpenAI API · SQLite · ЮKassa · aiohttp</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Видеобот <span style="letter-spacing: -0.8px;">MVP</span></span></span></h3><p class="rank">Прототип · несколько десятков роликов</p><details class="project-benefit">
+ <summary>Как вам это поможет?<span class="project-benefit-icon" aria-hidden="true"></span></summary>
+ <p>Отправляете текст в Telegram и получаете готовый ролик с озвучкой.</p>
+</details></div><div class="app-body"><p>Разработал MVP «текст → видео»: сценарий, сцены, изображения, озвучка и монтаж. На реальных текстах собрал несколько десятков роликов.</p><p>Проверял персонажа и звук. Тайминг этапов и общее время выводились в Telegram, ошибки — в лог. Исправил подмену нового референса старым. Для проверки гипотезы использовал бесплатные или недорогие модели. Для видеогенерации подготовил заглушку.</p><p class="project-tools">Python · OpenAI API · Yandex SpeechKit · FFmpeg</p></div></article><article class="app project" id="tradingview"><div class="app-heading"><h3><span class="fitted-line"><span>ICT-стратегия</span></span> <span class="fitted-line"><span>для TradingView</span></span></h3><a class="tradingview-preview" href="https://www.tradingview.com/chart/?symbol=BINANCE%3ABTCUSDT&amp;interval=15&amp;theme=dark" target="_blank" rel="noopener noreferrer" aria-label="Открыть график BTC/USDT на TradingView, 15 минут">
  <div class="project-stage" aria-hidden="true">
   <div class="project-screen">
    <img class="project-poster" src="assets/tradingview-poster.jpg" alt="" loading="lazy" decoding="async">
@@ -271,7 +316,16 @@ html.motion-ready.scroll-story-active .scroll-flow.reveal .flow-arrow,html.motio
    <div class="project-frames" data-src="assets/tradingview-frames.webp"><i></i><i></i></div>
   </div>
  </div>
-</a><p class="rank">Локальный проект · в процессе доработки</p></div><div class="app-body"><p>Разрабатывал ICT-стратегию на Pine Script с помощью Codex и TradingView MCP Bridge.</p><p>Проверял компиляцию и сигналы, тестировал гипотезы на исторических данных и сравнивал CSV-отчёты. Фиксировал периоды и параметры для сопоставимости тестов. Стратегия работает локально.</p><p class="project-tools">Pine Script · Codex · TradingView MCP Bridge</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>VPN и диагностика</span></span></h3><p class="rank">Сервер сейчас отключён</p></div><div class="app-body"><p>Настроил Linux-сервер, Xray, клиент Happ и SSH. Подготовил PowerShell-скрипты проверки основного и резервного подключения и сбора диагностики.</p><p>Сверял конфигурации и журналы, проверял открытие сайтов. Экспериментировал с доменом и Cloudflare. Диагностика помогала отличать рабочее соединение от формально включённого профиля.</p><p class="project-tools">Linux · Xray · SSH · PowerShell · Cloudflare</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Лендинги</span></span> <span class="fitted-line"><span>SIDE A и SIDE B</span></span></h3><p class="rank">Демо-сайты</p></div><div class="app-body"><p>Сделал демо-сайты на HTML, CSS и JavaScript. Анимация обложки работает через Canvas API, запись демо-видео — через MediaRecorder.</p><p>Добавил три режима движения, анимацию при прокрутке и отклик на курсор. Обложку создал через ImageGen. Проверил мобильную версию и опубликовал сайты на GitHub Pages. <a href="https://galihey.github.io/side-a-cover-motion/?v=3" target="_blank" rel="noopener noreferrer">Открыть SIDE A ↗</a> <a href="https://galihey.github.io/side-a-cover-motion/side-b/?v=6" target="_blank" rel="noopener noreferrer">Открыть SIDE B ↗</a></p><p class="project-tools">HTML · CSS · JavaScript · Canvas API · MediaRecorder · GitHub Pages</p><div class="portfolio-previews" aria-label="Примеры лендингов"><a href="https://galihey.github.io/side-a-cover-motion/?v=3" target="_blank" rel="noopener noreferrer"><div class="project-stage" aria-hidden="true">
+</a><p class="rank">Локальный проект · в процессе доработки</p><details class="project-benefit">
+ <summary>Как вам это поможет?<span class="project-benefit-icon" aria-hidden="true"></span></summary>
+ <p>Проверьте, сколько вы заработаете или потеряете за выбранный месяц по вашей стратегии и модели входа.</p>
+</details></div><div class="app-body"><p>Разрабатывал ICT-стратегию на Pine Script с помощью Codex и TradingView MCP Bridge.</p><p>Проверял компиляцию и сигналы, тестировал гипотезы на исторических данных и сравнивал CSV-отчёты. Фиксировал периоды и параметры для сопоставимости тестов. Стратегия работает локально.</p><p class="project-tools">Pine Script · Codex · TradingView MCP Bridge</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>VPN и диагностика</span></span></h3><p class="rank">Сервер сейчас отключён</p><details class="project-benefit">
+ <summary>Как вам это поможет?<span class="project-benefit-icon" aria-hidden="true"></span></summary>
+ <p>Ваш личный VPN для телефона и компьютера.</p>
+</details></div><div class="app-body"><p>Настроил Linux-сервер, Xray, клиент Happ и SSH. Подготовил PowerShell-скрипты проверки основного и резервного подключения и сбора диагностики.</p><p>Сверял конфигурации и журналы, проверял открытие сайтов. Экспериментировал с доменом и Cloudflare. Диагностика помогала отличать рабочее соединение от формально включённого профиля.</p><p class="project-tools">Linux · Xray · SSH · PowerShell · Cloudflare</p></div></article><article class="app project"><div class="app-heading"><h3><span class="fitted-line"><span>Лендинги</span></span> <span class="fitted-line"><span>SIDE A и SIDE B</span></span></h3><p class="rank">Демо-сайты</p><details class="project-benefit">
+ <summary>Как вам это поможет?<span class="project-benefit-icon" aria-hidden="true"></span></summary>
+ <p>Покупатель знакомится с вашим товаром и оформляет заказ на одной странице.</p>
+</details></div><div class="app-body"><p>Сделал демо-сайты на HTML, CSS и JavaScript. Анимация обложки работает через Canvas API, запись демо-видео — через MediaRecorder.</p><p>Добавил три режима движения, анимацию при прокрутке и отклик на курсор. Обложку создал через ImageGen. Проверил мобильную версию и опубликовал сайты на GitHub Pages. <a href="https://galihey.github.io/side-a-cover-motion/?v=3" target="_blank" rel="noopener noreferrer">Открыть SIDE A ↗</a> <a href="https://galihey.github.io/side-a-cover-motion/side-b/?v=6" target="_blank" rel="noopener noreferrer">Открыть SIDE B ↗</a></p><p class="project-tools">HTML · CSS · JavaScript · Canvas API · MediaRecorder · GitHub Pages</p><div class="portfolio-previews" aria-label="Примеры лендингов"><a href="https://galihey.github.io/side-a-cover-motion/?v=3" target="_blank" rel="noopener noreferrer"><div class="project-stage" aria-hidden="true">
  <div class="project-screen">
   <img class="project-poster" src="assets/side-a-motion.jpg" alt="" loading="lazy" decoding="async">
   <video class="project-motion" data-src="assets/side-a-smooth.mp4" muted playsinline preload="none" tabindex="-1" disablepictureinpicture loop></video>
@@ -639,4 +693,54 @@ document.addEventListener('click',event=>{if(!event.target.closest('.contact-act
  if(mobile.addEventListener)mobile.addEventListener('change',syncAll);
  if(reduced.addEventListener)reduced.addEventListener('change',syncAll);
 })();
-</script><div class="film-grain" aria-hidden="true"><span></span><span></span><span></span><span></span></div></body></html>
+</script><div class="film-grain" aria-hidden="true"><span></span><span></span><span></span><span></span></div><script id="project-benefit-reveal">
+(function(){
+ if(!('IntersectionObserver' in window))return;
+ const mobile=matchMedia('screen and (max-width:700px)');
+ const waiting=new Map();
+ const placements=[];
+ function finish(benefit,animate){
+  const intro=waiting.get(benefit);
+  if(intro){
+   waiting.delete(benefit);
+   readingObserver.unobserve(intro);
+   buttonObserver.unobserve(benefit);
+  }
+  if(!benefit.classList.contains('is-awaiting'))return;
+  benefit.classList.remove('is-awaiting');
+  if(animate)benefit.classList.add('is-revealed');
+ }
+ function reveal(benefit,delay){
+  if(!waiting.has(benefit))return;
+  readingObserver.unobserve(waiting.get(benefit));
+  buttonObserver.unobserve(benefit);
+  setTimeout(()=>finish(benefit,true),delay);
+ }
+ const readingObserver=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{
+  if(isIntersecting&&!mobile.matches)reveal(target.closest('.project').querySelector('.project-benefit'),950);
+ }),{rootMargin:'0px 0px -18% 0px'});
+ const buttonObserver=new IntersectionObserver(entries=>entries.forEach(({target,isIntersecting})=>{
+  if(isIntersecting&&mobile.matches)reveal(target,280);
+ }));
+ document.querySelectorAll('#projects .project').forEach(project=>{
+  const intro=project.querySelector('.app-body > p');
+  const benefit=project.querySelector('.project-benefit');
+  if(!intro||!benefit)return;
+  const heading=benefit.parentElement;
+  const tools=project.querySelector('.app-body > .project-tools');
+  function place(){
+   if(mobile.matches&&tools){
+    if(benefit.nextElementSibling!==tools)tools.before(benefit);
+   }else if(benefit.parentElement!==heading)heading.append(benefit);
+  }
+  placements.push(place);
+  place();
+  benefit.classList.add('is-awaiting');
+  waiting.set(benefit,intro);
+  readingObserver.observe(intro);
+  buttonObserver.observe(benefit);
+  benefit.addEventListener('focusin',()=>finish(benefit,false),{once:true});
+ });
+ if(mobile.addEventListener)mobile.addEventListener('change',()=>placements.forEach(place=>place()));
+})();
+</script></body></html>
